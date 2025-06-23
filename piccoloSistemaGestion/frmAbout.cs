@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace piccoloSistemaGestion
 {
-    public partial class frmPedidos: Form
+    public partial class frmAbout: Form
     {
-        public frmPedidos()
+        public frmAbout()
         {
             InitializeComponent();
         }

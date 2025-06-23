@@ -72,7 +72,7 @@ namespace capaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    SqlCommand cmd = new SqlCommand("SP_REPORTEVENTAS", oconexion);
+                    SqlCommand cmd = new SqlCommand("sp_ReporteVentas", oconexion);
                     cmd.Parameters.AddWithValue("fechainicio", fechainicio);
                     cmd.Parameters.AddWithValue("fechafin", fechafin);
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -85,12 +85,12 @@ namespace capaDatos
                         {
                             lista.Add(new ReporteVenta()
                             {
-                                fechaRegistro = dr["fechaRegistro"].ToString(),
-                                tipoDocumento = dr["tipoDocumento"].ToString(),
-                                numeroDocumento = dr["numeroDocumento"].ToString(),
-                                montoTotal = dr["montoTotal"].ToString(),
+                                fechaRegistro = dr["FechaRegistro"].ToString(),
+                                tipoDocumento = dr["TipoDocumento"].ToString(),
+                                numeroDocumento = dr["NumeroDocumento"].ToString(),
+                                montoTotal = dr["MontoTotal"].ToString(),
                                 usuarioRegistro = dr["usuarioRegistro"].ToString(),
-                                telefonoCliente = dr["telefonoCliente"].ToString(),
+                                telefonoCliente = dr["telefono"].ToString(),
                                 nombreCliente = dr["nombreCliente"].ToString(),
                                 codigoProducto = dr["codigoProducto"].ToString(),
                                 nombreProducto = dr["nombreProducto"].ToString(),

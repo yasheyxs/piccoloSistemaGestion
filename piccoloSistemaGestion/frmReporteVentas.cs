@@ -34,29 +34,48 @@ namespace piccoloSistemaGestion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            List<ReporteVenta> lista = new List<ReporteVenta>();
+            // Validar fechas
+            if (txtInicio.Value > txtFin.Value)
+            {
+                MessageBox.Show("La fecha de inicio no puede ser mayor que la fecha de fin", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-            lista = new CN_Reporte().Venta(txtInicio.Value.ToString(), txtFin.Value.ToString());
+            string fechaInicioStr = txtInicio.Value.ToString("dd/MM/yyyy");
+            string fechaFinStr = txtFin.Value.ToString("dd/MM/yyyy");
+
+            MessageBox.Show($"Buscando desde {fechaInicioStr} hasta {fechaFinStr}");
+
+            List<ReporteVenta> lista = new CN_Reporte().Venta(fechaInicioStr, fechaFinStr);
 
             dgvData.Rows.Clear();
+
+            if (lista.Count == 0)
+            {
+                MessageBox.Show("No se encontraron registros para el rango seleccionado.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
             foreach (ReporteVenta rv in lista)
             {
                 dgvData.Rows.Add(new object[] {
-                    rv.fechaRegistro,
-                    rv.tipoDocumento,
-                    rv.numeroDocumento,
-                    rv.montoTotal,
-                    rv.usuarioRegistro,
-                    rv.telefonoCliente,
-                    rv.nombreCliente,
-                    rv.codigoProducto,
-                    rv.nombreProducto,
-                    rv.categoria,
-                    rv.precioVenta,
-                    rv.subtotal
-                });
+            rv.fechaRegistro,
+            rv.tipoDocumento,
+            rv.numeroDocumento,
+            rv.montoTotal,
+            rv.usuarioRegistro,
+            rv.telefonoCliente,
+            rv.nombreCliente,
+            rv.codigoProducto,
+            rv.nombreProducto,
+            rv.categoria,
+            rv.precioVenta,
+            rv.subtotal
+        });
             }
+
+            MessageBox.Show($"Cantidad de registros encontrados: {lista.Count}");
+
         }
 
         private void btnBusqueda_Click(object sender, EventArgs e)
@@ -118,8 +137,7 @@ namespace piccoloSistemaGestion
                             row.Cells[8].Value.ToString(),
                             row.Cells[9].Value.ToString(),
                             row.Cells[10].Value.ToString(),
-                            row.Cells[11].Value.ToString(),
-                            row.Cells[12].Value.ToString()
+                            row.Cells[11].Value.ToString()
                         });
                 }
 

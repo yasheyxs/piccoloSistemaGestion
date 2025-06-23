@@ -120,19 +120,6 @@ namespace piccoloSistemaGestion
 
         private void menuPedidos_Click(object sender, EventArgs e)
         {
-            Form formularioPedidos = Application.OpenForms.OfType<frmPedidos>().FirstOrDefault();
-
-            if (formularioPedidos == null)
-            {
-                formularioPedidos = new frmPedidos();
-                formularioPedidos.StartPosition = FormStartPosition.CenterScreen;
-                formularioPedidos.FormBorderStyle = FormBorderStyle.FixedSingle;
-                formularioPedidos.Show();
-            }
-            else
-            {
-                formularioPedidos.BringToFront();
-            }
 
         }
 
@@ -159,6 +146,11 @@ namespace piccoloSistemaGestion
         private void iconButton1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void menuacercade_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new frmAbout());
         }
     }
 }

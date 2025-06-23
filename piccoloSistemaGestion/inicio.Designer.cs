@@ -47,7 +47,6 @@
             this.iconMenuItem3 = new FontAwesome.Sharp.IconMenuItem();
             this.submenuMateriaPrima = new System.Windows.Forms.ToolStripMenuItem();
             this.submenuNegocio = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuPedidos = new FontAwesome.Sharp.IconMenuItem();
             this.menuacercade = new FontAwesome.Sharp.IconMenuItem();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.label1 = new System.Windows.Forms.Label();
@@ -79,7 +78,6 @@
             this.menuproveedores,
             this.menureportes,
             this.menumantenedor,
-            this.menuPedidos,
             this.menuacercade});
             this.menuStrip1.Location = new System.Drawing.Point(0, 66);
             this.menuStrip1.Name = "menuStrip1";
@@ -290,21 +288,6 @@
             this.submenuNegocio.Text = "Negocio";
             this.submenuNegocio.Click += new System.EventHandler(this.submenuNegocio_Click);
             // 
-            // menuPedidos
-            // 
-            this.menuPedidos.AutoSize = false;
-            this.menuPedidos.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.menuPedidos.IconChar = FontAwesome.Sharp.IconChar.FilePen;
-            this.menuPedidos.IconColor = System.Drawing.Color.Black;
-            this.menuPedidos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.menuPedidos.IconSize = 50;
-            this.menuPedidos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.menuPedidos.Name = "menuPedidos";
-            this.menuPedidos.Size = new System.Drawing.Size(100, 74);
-            this.menuPedidos.Text = "Pedidos";
-            this.menuPedidos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.menuPedidos.Click += new System.EventHandler(this.menuPedidos_Click);
-            // 
             // menuacercade
             // 
             this.menuacercade.AutoSize = false;
@@ -318,6 +301,7 @@
             this.menuacercade.Size = new System.Drawing.Size(100, 74);
             this.menuacercade.Text = "Acerca de...";
             this.menuacercade.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.menuacercade.Click += new System.EventHandler(this.menuacercade_Click);
             // 
             // menuStrip2
             // 
@@ -428,7 +412,6 @@
         private FontAwesome.Sharp.IconMenuItem menuproveedores;
         private FontAwesome.Sharp.IconMenuItem menureportes;
         private System.Windows.Forms.Panel contenedor;
-        private FontAwesome.Sharp.IconMenuItem menuPedidos;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblUsuario;
         private FontAwesome.Sharp.IconMenuItem iconMenuItem2;

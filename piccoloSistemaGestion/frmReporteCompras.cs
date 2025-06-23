@@ -51,10 +51,12 @@ namespace piccoloSistemaGestion
             List<ReporteCompra> lista = new List<ReporteCompra>();
 
             lista = new CN_Reporte().Compra(
-                txtInicio.Value.ToString(),
-                txtFin.Value.ToString(),
+                txtInicio.Value.ToString("dd/MM/yyyy"),
+                txtFin.Value.ToString("dd/MM/yyyy"),
                 idproveedor
-                );
+            );
+
+
 
 
             dgvData.Rows.Clear();
@@ -77,6 +79,10 @@ namespace piccoloSistemaGestion
                     rc.subtotal
                 });
             }
+
+            MessageBox.Show($"Inicio: {txtInicio.Value}\nFin: {txtFin.Value}\nProveedor ID: {idproveedor}");
+            MessageBox.Show($"Cantidad de resultados: {lista.Count}");
+
         }
 
         private void btnDescargarExcel_Click(object sender, EventArgs e)
@@ -155,7 +161,7 @@ namespace piccoloSistemaGestion
                     if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtBuscar.Text.Trim().ToUpper()))
                         row.Visible = true;
                     else
-                        row.Visible = false;
+                        row.Visible = false;            
                 }
             }
         }
