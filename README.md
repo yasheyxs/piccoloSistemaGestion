@@ -1,54 +1,61 @@
-🍔 Sistema de Gestión - Piccolo Burgers
+Sistema de Gestión – Piccolo Burgers
 
-**Piccolo Burgers** es un sistema de gestión desarrollado para facilitar la administración integral de un restaurante. Permite a los usuarios gestionar múltiples aspectos operativos del negocio, desde el manejo de productos hasta la generación de reportes en PDF.
+Aplicación de escritorio (WinForms) para administrar las operaciones de un restaurante. Incluye control de usuarios, productos, materia prima, clientes, proveedores, compras y ventas, además de reportes en PDF y Excel.
 
-🧾 Funcionalidades principales
+📦 Tecnologías y dependencias
+Lenguaje: C# (.NET Framework 4.7.2)
+Entorno de desarrollo: Visual Studio 2019 o superior
+Base de datos: SQL Server LocalDB
 
-- Gestión de **usuarios**
-- Registro y visualización de **ventas** y **compras**
-- Administración de **clientes** y **proveedores**
-- Gestión de **categorías**, **productos**, **materia prima** y datos del **negocio**
-- Generación de **reportes de ventas y compras** en formato PDF
-- Exportación de datos usando herramientas modernas
+Paquetes NuGet principales:
+ClosedXML / ClosedXML.Report
+DocumentFormat.OpenXml
+iTextSharp / itextsharp.xmlworker
+FontAwesome.Sharp
+BouncyCastle.Cryptography
 
-🛠️ Tecnologías utilizadas
+🖥️ Requisitos de sistema
+Componente	Versión/Detalle
+Sistema operativo	Windows
+.NET Framework	4.7.2
+Visual Studio	2019 o superior (con soporte WinForms y restauración de NuGet)
+SQL Server	LocalDB o instancia compatible
 
-- **Lenguajes:** C#, html
-- **Entorno:** Visual Studio  
-- **Paquetes NuGet utilizados:**
-  - `ClosedXML`
-  - `ClosedXML.Report`
-  - `DocumentFormat.OpenXml`
-  - `iTextSharp`
-  - `FontAwesome.Sharp`
+📁 Estructura del proyecto
+capaEntidad/      → Clases de dominio (Producto, Cliente, Venta, etc.)
+capaDatos/        → Acceso a datos y consultas SQL
+capaNegocio/      → Lógica de negocio y validaciones
+piccoloSistemaGestion/ → Interfaz gráfica (WinForms)
+PICCOLO_DB.bak    → Respaldo de la base de datos
+piccoloSistemaGestion.sln → Solución principal
 
-🖥️ Requisitos
-
-- **Sistema operativo:** Windows  
-- **.NET Framework compatible**  
-- **Visual Studio** con soporte para Windows Forms  
-- Conexión a una la base de datos añadida en este mismo proyecto
+⚙️ Configuración inicial
+Clonar o descargar este repositorio.
+Restaurar la base de datos.
+Verificar que la instancia sea (localdb)\piccoloDB o ajustar el nombre en App.config.
+Abrir la solución piccoloSistemaGestion.sln con Visual Studio.
+Restaurar paquetes NuGet desde el IDE (menú Restore NuGet Packages).
+Compilar la solución para generar los binarios.
 
 🚀 Ejecución
+Establecer piccoloSistemaGestion como proyecto de inicio.
+Ejecutar la aplicación (F5 o botón Start).
+Al iniciarse, se mostrará el formulario de login:
+Usuario: 1
+Contraseña: 123
 
-1. Clonar o descargar el proyecto.
-2. Abrir el `.sln` con Visual Studio.
-3. Restaurar los paquetes NuGet si es necesario.
-4. Ejecutar el proyecto desde `frmLogin`.
-   - Usuario: `1`
-   - Contraseña: `123`
+📚 Funcionalidades principales
+Gestión de usuarios, roles y permisos.
+Administración de categorías, productos y materia prima.
+Módulos de clientes y proveedores.
+Registro de compras y ventas.
+Reportes de ventas y compras en PDF y Excel.
+Personalización básica de datos del negocio.
 
-🔧 Estado del proyecto
-
-✅ **Funcional** – Ya se encuentra en condiciones de uso.  
-🛠️ **Mejorable** – Puede adaptarse y escalar según nuevas necesidades del restaurante.
-
-![Untitled](https://github.com/user-attachments/assets/630d51cc-0ac6-45ec-81ef-fbf896309026)
-
-![image](https://github.com/user-attachments/assets/4e52122c-100b-4107-a8e9-d4d50b67f099)
-
-![image](https://github.com/user-attachments/assets/fb90a695-b035-4d60-bbc5-5bf65bb4002b)
-
-![image](https://github.com/user-attachments/assets/d661721f-2913-425e-bfa1-a289a97bba1e)
-
-![image](https://github.com/user-attachments/assets/cf867fca-d2f4-4f9a-9be0-8eec73ebc79b)
+🔄 Mejoras y contribuciones
+El proyecto está funcional pero abierto a mejoras. Se recomienda:
+Añadir validaciones y manejo de excepciones más robustos.
+Permitir configuración externa de la cadena de conexión.
+Integrar pruebas unitarias y automatizadas.
+Documentar nuevos módulos o personalizaciones.
+Las contribuciones se pueden enviar mediante fork y pull request respetando la estructura por capas.
