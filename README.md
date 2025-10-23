@@ -104,7 +104,3 @@ Ideal para mostrar competencias en **desarrollo de software de escritorio, anál
 
 5. **Generación de Excel:**
 <img width="1822" height="722" alt="image" src="https://github.com/user-attachments/assets/d3dec618-2d13-4084-b4cb-740cfca6f48e" />
-
-
-¿Querés que te genere la **versión Markdown final lista para pegar en GitHub** con formato, emojis y encabezados (README.md)?
-Puedo hacerlo directamente adaptado al estilo de portfolio o CV.
